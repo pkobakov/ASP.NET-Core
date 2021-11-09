@@ -1,9 +1,13 @@
-﻿@model MyFirstWeb.ViewModels.IndexViewModel
+﻿@using MyFirstWeb.ViewModels.MyViewModels
+@model IndexViewModel
 
-@{ 
+@{
 
     ViewData["Title"] = "Petar Kobakov page";
 }
+
+<partial name="_MyPartialPage" model="Model" />
+
 
 <h1>@ViewData["Title"]</h1>
 <h3>Hello, my name is @Model.Username</h3>
