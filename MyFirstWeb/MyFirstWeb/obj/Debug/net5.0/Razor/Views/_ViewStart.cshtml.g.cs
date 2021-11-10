@@ -26,8 +26,22 @@ using MyFirstWeb.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\Views\_ViewImports.cshtml"
+using MyFirstWeb.ViewComponets;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\Views\_ViewImports.cshtml"
+using MyFirstWeb.ViewModels.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7d5bde1f15778c401c6318f402c4d7b2eee6e226", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eae79a12df5135c8d52b81324889c7007f23720d", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -787,5 +787,6 @@ C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debu
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\MyFirstWeb.pdb
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\MyFirstWeb.genruntimeconfig.cache
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\MyFirstWeb.csproj.CopyComplete
-C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\MyPage\Index.cshtml.g.cs
-C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\MyPage\_MyPartialPage.cshtml.g.cs
+C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\Users\Index.cshtml.g.cs
+C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\Users\_UsersPartial.cshtml.g.cs
+C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\Shared\Components\RegisteredUsers\Default.cshtml.g.cs

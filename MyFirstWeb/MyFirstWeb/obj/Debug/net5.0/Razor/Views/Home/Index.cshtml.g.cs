@@ -27,6 +27,20 @@ using MyFirstWeb.Models;
 #line hidden
 #nullable disable
 #nullable restore
+#line 3 "C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\Views\_ViewImports.cshtml"
+using MyFirstWeb.ViewComponets;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\Views\_ViewImports.cshtml"
+using MyFirstWeb.ViewModels.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\Views\Home\Index.cshtml"
 using System.Text;
 
@@ -34,7 +48,7 @@ using System.Text;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3005d320625af7c3109eed3283481432ae708dae", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7d5bde1f15778c401c6318f402c4d7b2eee6e226", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eae79a12df5135c8d52b81324889c7007f23720d", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
