@@ -790,3 +790,4 @@ C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debu
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\Users\Index.cshtml.g.cs
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\Users\_UsersPartial.cshtml.g.cs
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\Shared\Components\RegisteredUsers\Default.cshtml.g.cs
+C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net5.0\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs

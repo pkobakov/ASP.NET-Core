@@ -17,11 +17,7 @@
             this.config = config;
         }
 
-        public IActionResult Index() 
-        {
-            return this.View();
-        }
-        [Authorize]
+
         public IActionResult Index(int id) 
         {
             var usernameTokens = this.User.Identity.Name;
