@@ -1,4 +1,5 @@
 ﻿@using MyFirstWeb.ViewModels.UsersViewModels
+
 @model IndexViewModel
 
 @{
@@ -7,12 +8,12 @@
 }
 
 <partial name="_UsersPartial" model="Model" />
+<div class="text-center text-white">
+    <h5>@ViewData["Title"]</h5>
+    <p>I'm @Model.Age years old</p>
+    <p>My Id is @Model.Id</p>
+</div>
 
-
-<h5 class="text-dark" >@ViewData["Title"]</h5>
-<h5>Hello, my name is @Model.Username</h5>
-<h5>I'm @Model.Age years old</h5>
-<h5>My Id is @Model.Id</h5>
 
 
 <div class="form-group">

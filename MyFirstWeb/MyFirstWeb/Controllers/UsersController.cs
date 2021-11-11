@@ -1,6 +1,7 @@
 ﻿namespace MyFirstWeb.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Configuration;
     using MyFirstWeb.ViewModels.UsersViewModels;
     using System;
     using System.Linq;
@@ -8,7 +9,12 @@
 
     public class UsersController : Controller
     {
+        private readonly IConfiguration config;
 
+        public UsersController(IConfiguration config)
+        {
+            this.config = config;
+        }
         public IActionResult Index(int id) 
         {
             var usernameTokens = this.User.Identity.Name;
