@@ -9,7 +9,16 @@
 <partial name="_UsersPartial" model="Model" />
 
 
-<h1>@ViewData["Title"]</h1>
-<h3>Hello, my name is @Model.Username</h3>
-<h3>I'm @Model.Age years old</h3>
-<h3>My Id is @Model.Id</h3>
+<h5 class="text-dark" >@ViewData["Title"]</h5>
+<h5>Hello, my name is @Model.Username</h5>
+<h5>I'm @Model.Age years old</h5>
+<h5>My Id is @Model.Id</h5>
+
+
+<div class="form-group">
+    <p><input asp-for="Username" name="Username" /></p>
+    <p><textarea asp-for="Description">Description</textarea></p>
+</div>
+
+
+
