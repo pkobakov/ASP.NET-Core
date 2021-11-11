@@ -42,7 +42,8 @@ namespace MyFirstWeb
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
+                app.UseStatusCodePagesWithRedirects("/Home/StatusCodeError?errorCode={0}");
                 app.UseMigrationsEndPoint();
             }
             else

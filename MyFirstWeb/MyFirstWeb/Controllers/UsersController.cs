@@ -1,5 +1,6 @@
 ﻿namespace MyFirstWeb.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using MyFirstWeb.ViewModels.UsersViewModels;
@@ -15,6 +16,12 @@
         {
             this.config = config;
         }
+
+        public IActionResult Index() 
+        {
+            return this.View();
+        }
+        [Authorize]
         public IActionResult Index(int id) 
         {
             var usernameTokens = this.User.Identity.Name;
