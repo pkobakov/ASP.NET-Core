@@ -15,6 +15,8 @@ namespace MyFirstWeb
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using MyFirstWeb.Filters;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -34,12 +36,19 @@ namespace MyFirstWeb
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews( configure =>
+            {
+                //global filter configuration
+                
+               // configure.Filters.Add(new AddHeaderActionFilterAttribute());
+            });
+
             services.Configure<CookiePolicyOptions>(options => 
             {
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
