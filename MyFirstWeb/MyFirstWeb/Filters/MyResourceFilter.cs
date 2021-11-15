@@ -1,11 +1,21 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyFirstWeb.Filters
 {
-    public class MyResourceFilter
+    public class MyResourceFilter : IResourceFilter
     {
+        public void OnResourceExecuted(ResourceExecutedContext context)
+        {
+          
+        }
+
+        public void OnResourceExecuting(ResourceExecutingContext context)
+        {
+            
+        }
     }
 }

@@ -36,12 +36,17 @@ namespace MyFirstWeb
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews( configure =>
-            {
-                //global filter configuration
-                
-               // configure.Filters.Add(new AddHeaderActionFilterAttribute());
-            });
+            services.AddControllersWithViews(); //configure =>
+            //{
+            //    //global filter configuration
+            //    
+            //    configure.Filters.Add(new AddHeaderActionFilterAttribute());
+            //    configure.Filters.Add(new MyAthorizationFilter());
+            //    configure.Filters.Add(new MyExceptionFilterAttribute());
+            //    configure.Filters.Add(new MyResourceFilter());
+            //    configure.Filters.Add(new MyResultFilterAttirbute());
+            //
+            //});
 
             services.Configure<CookiePolicyOptions>(options => 
             {
