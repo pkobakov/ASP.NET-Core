@@ -20,7 +20,8 @@
         {
 
 
-            return this.Json(userAgent);
+            return this.Json(model);
+            //return this.Json(userAgent);
         
         }
     }
