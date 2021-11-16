@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using MyFirstWeb.Filters;
-    using MyFirstWeb.Models.Data;
+    using MyFirstWeb.ViewModels.Info;
     using System;
 
     //filter configuration for the current controller
