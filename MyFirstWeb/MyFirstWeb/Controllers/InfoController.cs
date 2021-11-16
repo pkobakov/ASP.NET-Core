@@ -19,7 +19,10 @@
         public IActionResult Data([FromHeader(Name= "User-Agent")] string userAgent,DataInputModel model) 
         {
 
-
+            if (!this.ModelState.IsValid)
+            {
+                return this.Json(ModelState);
+            }
             return this.Json(model);
             //return this.Json(userAgent);
         

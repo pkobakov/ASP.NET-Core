@@ -16,6 +16,7 @@ namespace MyFirstWeb
     using System.Linq;
     using System.Threading.Tasks;
     using MyFirstWeb.Filters;
+    using MyFirstWeb.ModelBinders;
 
     public class Startup
     {
@@ -36,7 +37,10 @@ namespace MyFirstWeb
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews(); //configure =>
+            services.AddControllersWithViews(configure
+                =>configure.ModelBinderProviders.Insert(0, new ExtractYearModelBinderProvider()));
+            
+            //configure =>
             //{
             //    //global filter configuration
             //    
