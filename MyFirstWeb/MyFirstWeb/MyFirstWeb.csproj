@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Products\ThankYou.cshtml" />
     <Content Remove="Views\Home\StatusCodeError.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Products\ThankYou.cshtml" />
     <None Include="Views\Home\StatusCodeError.cshtml" />
   </ItemGroup>
 
