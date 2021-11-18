@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-MyFirstWeb-A278D818-66B9-4071-8C7D-FCCC4047F236")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyFirstWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
