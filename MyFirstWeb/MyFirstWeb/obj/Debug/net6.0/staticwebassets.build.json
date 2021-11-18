@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "03cC6cg+Tj95X5AM8TbOErhBhoRFR0WMy6r8sSqBNaw=",
+  "Hash": "F6VpRziSxAiAlKiZ67k4C04GkjcsTPApkmKZZwo44Js=",
   "Source": "MyFirstWeb",
   "BasePath": "_content/MyFirstWeb",
   "Mode": "Default",
@@ -1647,6 +1647,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\wwwroot\\print.png",
+      "SourceId": "MyFirstWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\wwwroot\\",
+      "BasePath": "_content/MyFirstWeb",
+      "RelativePath": "print.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\print.png"
     }
   ]
 }
