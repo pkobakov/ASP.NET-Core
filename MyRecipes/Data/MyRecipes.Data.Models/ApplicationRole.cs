@@ -3,11 +3,11 @@ namespace MyRecipes.Data.Models
 {
     using System;
 
-    using MyRecipes.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
 
+    using MyRecipes.Data.Common.Models;
     public class ApplicationRole : IdentityRole, IAuditInfo, IDeletableEntity
+
     {
         public ApplicationRole()
             : this(null)
