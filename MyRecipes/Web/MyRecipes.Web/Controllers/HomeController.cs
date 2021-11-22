@@ -5,30 +5,27 @@
 
     using Microsoft.AspNetCore.Mvc;
     using MyRecipes.Data;
+    using MyRecipes.Data.Common.Repositories;
+    using MyRecipes.Data.Models;
+    using MyRecipes.Services.Data;
     using MyRecipes.Web.ViewModels;
     using MyRecipes.Web.ViewModels.Home;
 
+    // 1. ApplicationDbcontext
+    // 2. Repositories
+    // 3. Service
     public class HomeController : BaseController
     {
-        private readonly ApplicationDbContext db;
+        private readonly IGetCountsService getCountsService;
 
-        public HomeController(ApplicationDbContext db)
+        public HomeController(IGetCountsService getCountsService )
         {
-            this.db = db;
+            this.getCountsService = getCountsService;
         }
 
         public IActionResult Index()
         {
-            var viewModel = new IndexViewModel
-            {
-                CategoriesCount = this.db.Categories.Count(),
-
-                RecipesCount = this.db.Recipes.Count(),
-
-                ImagesCount = this.db.Images.Count(),
-
-                IngredientsCount = this.db.Images.Count(),
-            };
+            var viewModel = this.getCountsService.GetCounts();
 
             return this.View(viewModel);
         }
