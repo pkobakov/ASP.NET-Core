@@ -1,0 +1,38 @@
+﻿@using MyRecipes.Web.ViewModels.Recipes
+@model CreateRecipeInputModel 
+@{ 
+    this.ViewData["Title"] = "Add new recipe";
+    var categoryItems = Model.CategoriesItems.Select(x => new SelectListItem(x.Value, x.Key));
+}
+<h1 class="display-4 text-white text-center">@this.ViewData["Title"]</h1>
+<form method="post" class="col-md-6 offset-md-3">
+    <div asp-validation-summary="All" class="text-warning"></div>
+    <div class="form-group text-white">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-warning"></span>
+    </div>
+    <div class="form-group text-white">
+        <label asp-for="Instructions"></label>
+        <textarea asp-for="Instructions" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Instructions" class="text-warning"></span>
+    </div>
+    <div class="form-group text-white">
+        <label asp-for="PreparationTime">Preparation Time (in minutes)</label>
+        <input asp-for="PreparationTime" class="form-control" />
+        <span asp-validation-for="PreparationTime" class="text-warning"></span>
+    </div>
+    <div class="form-group text-white">
+        <label asp-for="CookingTime">Cooking Time (in minutes)</label>
+        <input asp-for="CookingTime" class="form-control" />
+        <span asp-validation-for="CookingTime" class="text-warning"></span>
+    </div>
+    <div class="form-group text-white">
+        <label asp-for="CategoryId">Category</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="categoryItems"></select>
+        <span asp-validation-for="CategoryId" class="text-warning"></span>
+    </div>
+    <input type="submit" class="btn btn-warning col-md-2 offset-1" />
+
+</form>
+
