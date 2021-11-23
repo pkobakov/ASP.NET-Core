@@ -6,14 +6,14 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
+    <h1 class="display-4 text-white">Welcome to @GlobalConstants.SystemName!</h1>
     <div class="col-md-4 offset-md-4">
-        <p>We have:</p>
+        <p class="display-6 text-white ">We have:</p>
         <ul>
-            <li class="list-group-item bg-success">Recipes: @Model.RecipesCount</li>
-            <li class="list-group-item bg-warning">Categories: @Model.CategoriesCount</li>
-            <li class="list-group-item bg-success">Image: @Model.ImagesCount</li>
-            <li class="list-group-item bg-warning">Ingredients: @Model.IngredientsCount</li>
+            <li class="list-group-item" style="background-color:coral">Recipes: @Model.RecipesCount</li>
+            <li class="list-group-item" style="background-color: cornflowerblue">Categories: @Model.CategoriesCount</li>
+            <li class="list-group-item bg-success" style="background-color: honeydew">Image: @Model.ImagesCount</li>
+            <li class="list-group-item bg-warning" style="background-color: hotpink">Ingredients: @Model.IngredientsCount</li>
         </ul>
 
     </div>
