@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+
     using MyRecipes.Data.Common.Repositories;
 
     using MyRecipes.Data.Models;
@@ -17,7 +18,7 @@
 
         public IEnumerable<KeyValuePair<string, string>> GetAllKeyValuePairs()
        {
-            var repositories = this.categoriesRepository.All()
+            var repositories = this.categoriesRepository.AllAsNoTracking()
                                                          .Select(x => new
                                                          {
                                                              x.Id,

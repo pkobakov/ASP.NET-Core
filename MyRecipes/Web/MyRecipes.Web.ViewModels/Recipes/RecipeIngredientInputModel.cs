@@ -9,7 +9,7 @@ namespace MyRecipes.Web.ViewModels.Recipes
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(3)]
+        [MaxLength(10)]
         public string Quantity { get; set; }
     }
 }

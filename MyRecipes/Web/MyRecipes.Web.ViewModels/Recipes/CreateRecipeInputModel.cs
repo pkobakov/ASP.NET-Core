@@ -17,18 +17,18 @@
         [Range(0, 24 * 60)]
         public int PreparationTime { get; set; }
 
-        [Range(0,24 * 60)]
+        [Range(0, 24 * 60)]
         public int CookingTime { get; set; }
 
-        [Range(1,100)]
+        [Range(1, 100)]
         public int PortionsCount { get; set; }
 
-        [Required]
+       
         public int CategoryId { get; set; }
 
-        public IEnumerable<RecipeIngredientInputModel> Ingredients { get; set; }
-
         public IEnumerable<KeyValuePair<string, string>> CategoriesItems { get; set; }
+
+        public IEnumerable<RecipeIngredientInputModel> Ingredients { get; set; }
 
     }
 }
