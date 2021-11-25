@@ -33,8 +33,6 @@ namespace MyFirstWeb.Controllers
 
         public IActionResult AjaxDemo() 
         {
-
-
             return this.View();
         }
 
