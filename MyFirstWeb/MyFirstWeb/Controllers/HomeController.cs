@@ -31,6 +31,20 @@ namespace MyFirstWeb.Controllers
             return View();
         }
 
+        public IActionResult AjaxDemo() 
+        {
+
+
+            return this.View();
+        }
+
+        public IActionResult AjaxDemoData()
+        {
+            return this.Json(new[] {
+            new { Name= "Marina", BirthDate="23.11.1978"},
+            new { Name= "Niki", BirthDate= "05.06.2018"} 
+            });
+        }
         public IActionResult StatusCodeError(int errorCode) 
         {
 
