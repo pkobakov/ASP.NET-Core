@@ -2,37 +2,73 @@
 {
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using MyFirstWeb.Data;
     using MyFirstWeb.Models.Enums.Products;
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        [HttpGet]
-        public Product Test() 
+        private readonly ApplicationDbContext db;
+
+        public ProductsController(ApplicationDbContext db)
         {
-            return new Product
-            {
-                Id = 123,
-                ProductName = null,
-                Category = Enum.GetName(typeof(Category), 1),
-                Description = "Cool product",
-                Price = 78.00M
-            };
+            this.db = db;
         }
 
-        [HttpDelete]
-        public string Delete() 
-        {
-            return "Delete";
+       [HttpGet]
+       public IEnumerable<Product> Get() 
+        { 
+        
+        return db.Products.ToList();
+        
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Product> Get (int id) 
+        { 
+         var product = db.Products.Find(id);
+            if (product == null)
+            {
+                return this.NotFound();
+            }
+            
+            return product;
+        } 
 
         [HttpPost]
-        public Product Post(Product product)
+        public  async Task<ActionResult> Post (Product product) 
+        { 
+            await db.Products.AddAsync(product);
+            await db.SaveChangesAsync();
+            return this.CreatedAtAction("Get", new {id = product.Id}, product);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Put(Product product) 
+        { 
+            this.db.Entry(product).State = EntityState.Modified;
+            await db.SaveChangesAsync();
+            return this.NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id) 
         {
-            return product;
+            var product = this.db.Products.Find(id);
+
+            if (product == null)
+            {
+                return this.NotFound();
+            }
+            this.db.Remove(product);
+            await this.db.SaveChangesAsync();
+            return this.NoContent();
 
         }
     }
