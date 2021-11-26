@@ -36,4 +36,10 @@
     <ProjectReference Include="..\MyRecipes.Web.Infrastructure\MyRecipes.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\MyRecipes.Web.ViewModels\MyRecipes.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
