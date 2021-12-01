@@ -43,6 +43,13 @@ namespace MyFirstWeb.Controllers
             new { Name= "Niki", BirthDate= "05.06.2018"} 
             });
         }
+        
+        //[AutoValidateAntiforgeryToken]
+        public IActionResult GetData(string info) 
+        { 
+          return this.Content(info);    
+        
+        }
         public IActionResult StatusCodeError(int errorCode) 
         {
 

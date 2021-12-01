@@ -1,0 +1,42 @@
+﻿@using System.Text
+@{ 
+
+    ViewData["Title"] = "My Ajax Demo";
+
+}
+<div class="text-center">
+    <h1 class=" display-4 text-white">@ViewData["Title"]</h1>
+</div>
+<table id="DataTable" class="table table-bordered text-white">
+    <tr style="background-color:coral">
+        <td>Name</td>
+        <td>Birth Date</td>
+    </tr>
+    <tr>
+        <td>Pepi</td>
+        <td>09.12.1974</td>
+    </tr>
+    <tr>
+        <td>Alex</td>
+        <td>18.12.2006</td>
+    </tr>
+</table>
+<button onclick="RefreshData()" class="btn btn-success">Refresh</button>
+
+<script>
+    function RefreshData() {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if (this.readyState == 3 && this.status == 200) {
+                var people = JSON.parse(this.responseText);
+                for (var i = 0; i < people.length; i++) {
+                    var person = people[i];
+                    document.getElementById("DataTable").innerHTML +=
+                        "<tr><td>" + person.name + "</td><td>" + person.birthDate + "</td></tr>";
+                }
+            }
+        };
+        xhr.open("GET", "/Home/AjaxDemoData");
+        xhr.send();
+    }
+</script>

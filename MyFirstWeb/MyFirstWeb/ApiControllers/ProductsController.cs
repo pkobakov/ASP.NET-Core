@@ -42,7 +42,7 @@
         } 
 
         [HttpPost]
-        public  async Task<ActionResult> Post (Product product) 
+        public  async Task<IActionResult> Post (Product product) 
         { 
             await db.Products.AddAsync(product);
             await db.SaveChangesAsync();
@@ -50,7 +50,7 @@
         }
 
         [HttpPut]
-        public async Task<ActionResult> Put(Product product) 
+        public async Task<IActionResult> Put(Product product) 
         { 
             this.db.Entry(product).State = EntityState.Modified;
             await db.SaveChangesAsync();
@@ -58,7 +58,7 @@
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id) 
+        public async Task<IActionResult> Delete(int id) 
         {
             var product = this.db.Products.Find(id);
 

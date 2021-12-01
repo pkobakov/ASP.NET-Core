@@ -10,6 +10,7 @@ namespace MyFirstWeb
     using Microsoft.AspNetCore.Http;
     using MyFirstWeb.Data;
     using MyFirstWeb.ModelBinders;
+    using Microsoft.AspNetCore.Mvc;
 
     public class Startup
     {
@@ -28,10 +29,26 @@ namespace MyFirstWeb
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            // User & Identity
+
+            services.AddDefaultIdentity<IdentityUser>(options => 
+            {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 0;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Lockout.MaxFailedAccessAttempts = 5;
+
+
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews(configure
-                =>configure.ModelBinderProviders.Insert(0, new ExtractYearModelBinderProvider()));
+
+            services.AddControllersWithViews(configure =>
+            {
+                configure.ModelBinderProviders.Insert(0, new ExtractYearModelBinderProvider());
+                configure.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            });
             
             //configure =>
             //{
