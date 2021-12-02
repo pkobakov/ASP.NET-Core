@@ -11,6 +11,8 @@ namespace MyFirstWeb
     using MyFirstWeb.Data;
     using MyFirstWeb.ModelBinders;
     using Microsoft.AspNetCore.Mvc;
+    using System;
+    using MyFirstWeb.Models;
 
     public class Startup
     {
@@ -31,7 +33,7 @@ namespace MyFirstWeb
 
             // User & Identity
 
-            services.AddDefaultIdentity<IdentityUser>(options => 
+            services.AddDefaultIdentity<ApplicationUser>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
                 options.Password.RequireDigit = false;
@@ -39,9 +41,12 @@ namespace MyFirstWeb
                 options.Password.RequiredUniqueChars = 0;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+
 
 
             })
+                .AddRoles<IdentityRole>() // to use RoleManager
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews(configure =>
