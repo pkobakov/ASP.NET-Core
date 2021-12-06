@@ -24,11 +24,11 @@
 
         public int PortionsCount { get; set; }
 
-        public string UserId { get; set; }
+        public string OriginalUrl { get; set; }
 
         public string AddedByUserId { get; set; }
 
-        public virtual ApplicationUser AddedByUser { get; set; }
+        public ApplicationUser AddedByUser { get; set; }
 
         public int CategoryId { get; set; }
 

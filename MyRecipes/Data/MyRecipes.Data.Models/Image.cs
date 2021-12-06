@@ -17,6 +17,8 @@
 
         public string Extension { get; set; }
 
+        public string RemoteImageUrl { get; set; }
+
         public string AddedByUserId { get; set; }
 
         public ApplicationUser AddedByUser { get; set; }

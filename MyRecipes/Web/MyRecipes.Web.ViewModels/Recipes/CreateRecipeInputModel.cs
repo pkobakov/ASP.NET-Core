@@ -23,8 +23,9 @@
         [Range(1, 100)]
         public int PortionsCount { get; set; }
 
-       
         public int CategoryId { get; set; }
+
+        public int UserId { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> CategoriesItems { get; set; }
 
