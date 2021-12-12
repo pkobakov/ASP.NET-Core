@@ -9,8 +9,10 @@
     {
         Task CreateAsync(CreateRecipeInputModel model, string userId, string imagePath);
 
-        IEnumerable<RecipeInListViewModel> GetAll(int id, int itemsPerPage = 4);
+        IEnumerable<T> GetAll<T>(int id, int itemsPerPage = 4);
 
         int GetCount();
+
+        T GetById<T>(int id);
     }
 }

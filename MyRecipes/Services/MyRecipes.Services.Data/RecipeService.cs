@@ -13,7 +13,7 @@
 
     public class RecipeService : IRecipeService
     {
-        private readonly string[] allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+        private readonly string[] allowedExtensions = new[] { "jpg", "jpeg", "png", "gif" };
         private readonly IDeletableEntityRepository<Recipe> recipesRepository;
         private readonly IDeletableEntityRepository<Ingredient> ingredientRepository;
 
@@ -58,7 +58,7 @@
 
            foreach (var image in model.Images)
            {
-                var extension = Path.GetExtension(image.FileName);
+                var extension = Path.GetExtension(image.FileName).TrimStart('.');
 
                 if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
                 {
@@ -83,15 +83,27 @@
            await this.recipesRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<RecipeInListViewModel> GetAll(int page, int itemsPerPage = 4)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 4)
         {
-            var recipes = this.recipesRepository.AllAsNoTracking()
-                .OrderByDescending(x => x.Id)
-                .Skip((page - 1) * itemsPerPage)
-                .Take(itemsPerPage)
-                .To<RecipeInListViewModel>()
-                .ToList();
+            var recipes = this.recipesRepository
+                              .AllAsNoTracking()
+                              .OrderByDescending(x => x.Id)
+                              .Skip((page - 1) * itemsPerPage)
+                              .Take(itemsPerPage)
+                              .To<T>()
+                              .ToList();
+
             return recipes;
+        }
+
+        public T GetById<T>(int id)
+        {
+            var singleRecipe = this.recipesRepository
+                                   .AllAsNoTracking()
+                                   .Where(x => x.Id == id)
+                                   .To<T>()
+                                   .FirstOrDefault();
+            return singleRecipe;
         }
 
         public int GetCount()

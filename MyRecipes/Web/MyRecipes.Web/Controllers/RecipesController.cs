@@ -65,6 +65,7 @@
             }
 
             this.TempData["Message"] = "Recipe added successfully";
+
             return this.Redirect("/Recipes/All");
         }
 
@@ -76,10 +77,16 @@
             {
                 ItemsPerPage = itemsPerPage,
                 Page = id,
-                Recipes = this.recipeService.GetAll(id, itemsPerPage),
+                Recipes = this.recipeService.GetAll<RecipeInListViewModel>(id, itemsPerPage),
                 RecipesCount = this.recipeService.GetCount(),
             };
             return this.View(viewModel);
+        }
+
+        public IActionResult ById(int id)
+        {
+            var recipe = this.recipeService.GetById<SingleRecipeViewModel>(id);
+            return this.View(recipe);
         }
     }
 }
