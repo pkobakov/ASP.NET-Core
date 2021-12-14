@@ -1,20 +1,44 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using MyFirstWeb.Data;
 using MyFirstWeb.Models.Enums.Products;
 using MyFirstWeb.Models.Products;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyFirstWeb.Controllers
 {
     public class ProductsController : Controller
     {
+        private readonly ApplicationDbContext db;
         private readonly IWebHostEnvironment webHostEnvironment;
 
-        public ProductsController(IWebHostEnvironment webHostEnvironment)
+        public ProductsController(ApplicationDbContext db, IWebHostEnvironment webHostEnvironment)
         {
+            this.db = db;
             this.webHostEnvironment = webHostEnvironment;
         }
+
+        [HttpGet]
+        public IEnumerable<Product> Get() 
+        {
+            return db.Products.ToList(); 
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Product> Get(int id) 
+        { 
+         var product = this.db.Products.Find(id);
+            if (product == null)
+            {
+                return this.NotFound();
+            }
+
+            return product;
+        }
+
         public IActionResult Add()
         {
             // if we want to set default values to the fields
