@@ -381,3 +381,4 @@ C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debu
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net6.0\ref\MyFirstWeb.dll
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net6.0\MyFirstWeb.pdb
 C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\obj\Debug\net6.0\MyFirstWeb.genruntimeconfig.cache
+C:\Users\Petar Kobakov\Desktop\AspNetCore\ASP.NET\MyFirstWeb\MyFirstWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
