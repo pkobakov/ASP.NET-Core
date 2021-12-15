@@ -30,13 +30,13 @@ namespace MyFirstWeb.Controllers
         [HttpGet("{id}")]
         public ActionResult<Product> Get(int id) 
         { 
-         var product = this.db.Products.Find(id);
+            var product = this.db.Products.Find(id);
             if (product == null)
             {
                 return this.NotFound();
             }
 
-            return product;
+             return product;
         }
 
         public IActionResult Add()
