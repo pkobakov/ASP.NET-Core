@@ -21,6 +21,14 @@ namespace MyFirstWeb
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+            .ConfigureLogging(logging =>
+            {
+               
+                logging.AddConsole();
+                logging.SetMinimumLevel(LogLevel.Information);
+            });
+        
+        
     }
 }
