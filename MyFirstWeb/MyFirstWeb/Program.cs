@@ -24,9 +24,8 @@ namespace MyFirstWeb
                 })
             .ConfigureLogging(logging =>
             {
-               
-                logging.AddConsole();
                 logging.SetMinimumLevel(LogLevel.Information);
+                logging.AddEventLog();
             });
         
         

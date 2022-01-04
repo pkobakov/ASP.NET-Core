@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MyFirstWeb.Models;
+using MyFirstWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,11 +25,18 @@ namespace MyFirstWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var vieModel = new IndexViewModel
+            {
+                Name = "Anonymous",
+                ReadPrivacy = this.HttpContext.Session.Keys.Contains("ReadPrivacy"),
+                Year = DateTime.UtcNow.Year
+            };
+            return View(vieModel);
         }
 
         public IActionResult Privacy()
         {
+            this.HttpContext.Session.SetString("ReadPrivacy", "true");
             return View();
         }
 
