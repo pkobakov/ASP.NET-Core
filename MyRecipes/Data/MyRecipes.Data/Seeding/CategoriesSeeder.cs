@@ -15,9 +15,15 @@
                 return;
             }
 
-            await dbContext.Categories.AddAsync(new Category { Name = "Тарт"});
-            await dbContext.Categories.AddAsync(new Category { Name = "Кекс" });
-            await dbContext.Categories.AddAsync(new Category { Name = "Печено свинско" });
+            await dbContext.Categories.AddAsync(new Category { Name = "Основни ястия" });
+            await dbContext.Categories.AddAsync(new Category { Name = "Супи" });
+            await dbContext.Categories.AddAsync(new Category { Name = "Пици" });
+            await dbContext.Categories.AddAsync(new Category { Name = "Десерти" });
+            await dbContext.Categories.AddAsync(new Category { Name = "Салати" });
+            await dbContext.Categories.AddAsync(new Category { Name = "Паста и ризото" });
+            await dbContext.Categories.AddAsync(new Category { Name = "Предястия" });
+
+
 
             await dbContext.SaveChangesAsync();
         }

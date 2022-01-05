@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
+    using MyRecipes.Data.Models;
     using MyRecipes.Web.ViewModels.Recipes;
 
     public interface IRecipeService

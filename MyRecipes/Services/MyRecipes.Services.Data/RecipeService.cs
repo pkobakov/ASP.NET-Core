@@ -62,7 +62,6 @@
 
                 if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
                 {
-
                     throw new Exception($"Invalid image extension {extension}");
                 }
 

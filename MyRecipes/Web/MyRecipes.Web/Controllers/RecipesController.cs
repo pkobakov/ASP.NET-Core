@@ -55,7 +55,7 @@
             var user = await this.userManager.GetUserAsync(this.User);
             try
             {
-                await this.recipeService.CreateAsync(model, user.Id,$"{this.environment.WebRootPath}/images");
+                await this.recipeService.CreateAsync(model, user.Id, $"{this.environment.WebRootPath}/images");
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@
 
             this.TempData["Message"] = "Recipe added successfully";
 
-            return this.Redirect("/Recipes/All");
+            return this.RedirectToAction("All");
         }
 
         public IActionResult All(int id = 1)

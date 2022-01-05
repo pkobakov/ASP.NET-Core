@@ -1,15 +1,20 @@
 ﻿@using MyRecipes.Web.ViewModels.Recipes
-@model RecipesListViewModel
+@model RecipesListViewModel;
 @{      
     this.ViewData["Title"] = "All recipes";
  }
 
 <h1 class="display-4 text-white text-center">@ViewData["Title"]</h1>
+
+@if (this.TempData.ContainsKey("Message"))
+{
+    <div class="alert alert-success">@this.TempData["Message"]</div>
+}
 <div class="row">
     @foreach (var recipe in this.Model.Recipes)
     {
         <div class="media col-md-3">
-            <img src="@recipe.ImageUrl" width="100" class="mr-3 img-responsive" alt="...">
+            <img  class="d-block w-100" src="@recipe.ImageUrl" >
             <div class="media-body">
                 <h5 class="mt-0"><a asp-action="ById" asp-route-id ="@recipe.Id">@recipe.Name</a></h5>
                 @recipe.CategoryName
