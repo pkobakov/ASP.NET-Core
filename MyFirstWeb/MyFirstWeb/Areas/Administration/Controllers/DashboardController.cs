@@ -2,8 +2,7 @@
 
 namespace MyFirstWeb.Areas.Administration.Controllers
 {
-    [Area("Administration") ]
-    public class DashboardController : Controller
+    public class DashboardController : AdminController
     {
         public IActionResult Index()
         {

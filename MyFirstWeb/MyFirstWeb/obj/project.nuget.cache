@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nrpqlRlXEH4I1nzEdUsmTn8wJalEHs8lSUXJqs/u+mjiyixeW2hRTPEZgew242c9MJDuQgnmaDqC1YPQoGXxqg==",
+  "dgSpecHash": "XkWVSQQYaBGxxQpRhF7c/PbozS7EF28xaMGueedvCysaxEZ94Y46jkXVwjnV6b7Xa47MBu20tn7vWEgTqkaIfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj",
+  "projectFilePath": "C:\\Users\\Petar Kobakov\\Desktop\\ASP.NET Core\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Petar Kobakov\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Petar Kobakov\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

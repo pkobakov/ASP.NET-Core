@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj": {}
+    "C:\\Users\\Petar Kobakov\\Desktop\\ASP.NET Core\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj": {
+    "C:\\Users\\Petar Kobakov\\Desktop\\ASP.NET Core\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\ASP.NET Core\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj",
         "projectName": "MyFirstWeb",
-        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj",
+        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\ASP.NET Core\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\MyFirstWeb.csproj",
         "packagesPath": "C:\\Users\\Petar Kobakov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\AspNetCore\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\obj\\",
+        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\ASP.NET Core\\ASP.NET\\MyFirstWeb\\MyFirstWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Petar Kobakov\\AppData\\Roaming\\NuGet\\NuGet.Config",
