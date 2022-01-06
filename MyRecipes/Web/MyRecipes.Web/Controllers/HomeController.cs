@@ -13,7 +13,7 @@
     {
         private readonly IGetCountsService getCountsService;
 
-        public HomeController(IGetCountsService getCountsService )
+        public HomeController(IGetCountsService getCountsService)
         {
             this.getCountsService = getCountsService;
         }
@@ -22,11 +22,12 @@
         {
             var counts = this.getCountsService.GetCounts();
 
-            var viewModel = new IndexViewModel{ 
-                CategoriesCount =counts.CategoriesCount,
-                RecipesCount =counts.RecipesCount,
-                ImagesCount =counts.ImagesCount,
-                IngredientsCount =counts.IngredientsCount,
+            var viewModel = new IndexViewModel
+            {
+                CategoriesCount = counts.CategoriesCount,
+                RecipesCount = counts.RecipesCount,
+                ImagesCount = counts.ImagesCount,
+                IngredientsCount = counts.IngredientsCount,
             };
 
             return this.View(viewModel);
