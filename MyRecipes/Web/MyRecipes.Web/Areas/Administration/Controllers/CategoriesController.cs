@@ -23,7 +23,7 @@
         // GET: Administration/Categories
         public async Task<IActionResult> Index()
         {
-            return this.View(await this.repository.All().ToListAsync());
+            return this.View(await this.repository.AllWithDeleted().ToListAsync());
         }
 
         // GET: Administration/Categories/Details/5
