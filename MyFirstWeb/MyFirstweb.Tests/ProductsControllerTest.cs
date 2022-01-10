@@ -18,7 +18,7 @@
                 ProductName = "Shirt",
                 Description = "Description",
                 Category = Category.Clothes,
-                Price = 12.00M
+                Price = 12.00
             };
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()

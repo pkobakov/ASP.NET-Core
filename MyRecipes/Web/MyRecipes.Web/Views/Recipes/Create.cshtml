@@ -2,7 +2,6 @@
 @model CreateRecipeInputModel 
 @{ 
     this.ViewData["Title"] = "Add new recipe";
-    
     var categoryItems = Model.CategoriesItems.Select(x => new SelectListItem(x.Value, x.Key));
 }
 <h1 class="display-4 text-white text-center">@this.ViewData["Title"]</h1>

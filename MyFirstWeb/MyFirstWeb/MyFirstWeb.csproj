@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Administration\Data\**" />
+    <Compile Remove="Areas\Administration\Models\**" />
+    <Content Remove="Areas\Administration\Data\**" />
+    <Content Remove="Areas\Administration\Models\**" />
+    <EmbeddedResource Remove="Areas\Administration\Data\**" />
+    <EmbeddedResource Remove="Areas\Administration\Models\**" />
+    <None Remove="Areas\Administration\Data\**" />
+    <None Remove="Areas\Administration\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Products\ThankYou.cshtml" />
     <Content Remove="Views\Home\StatusCodeError.cshtml" />
   </ItemGroup>
@@ -28,11 +39,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Administration\Data\" />
-    <Folder Include="Areas\Administration\Models\" />
   </ItemGroup>
 
 </Project>

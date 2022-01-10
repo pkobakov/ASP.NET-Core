@@ -9,6 +9,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using MyRecipes.Common;
     using MyRecipes.Data.Models;
     using MyRecipes.Services.Data;
     using MyRecipes.Web.ViewModels.Recipes;
@@ -87,6 +88,30 @@
         {
             var recipe = this.recipeService.GetById<SingleRecipeViewModel>(id);
             return this.View(recipe);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult Edit(int id)
+        {
+            var inputModel = this.recipeService.GetById<EditRecipeInputModel>(id);
+            inputModel.CategoriesItems = this.categoriesService.GetAllKeyValuePairs();
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> Edit(int id, EditRecipeInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                input.CategoriesItems = this.categoriesService.GetAllKeyValuePairs();
+                return this.View(input);
+            }
+
+            await this.recipeService.UpdateAsync(id, input);
+
+            return this.RedirectToAction(nameof(this.ById), new { id });
         }
     }
 }

@@ -118,5 +118,20 @@
                 .Take(count)
                 .ToList();
         }
+
+        public async Task UpdateAsync(int id, EditRecipeInputModel model)
+        {
+            var recipe = this.recipesRepository.All().FirstOrDefault(x => x.Id == id);
+            recipe.Name = model.Name;
+            recipe.Instructions = model.Instructions;
+            recipe.PreparationTime = TimeSpan.FromMinutes(model.PreparationTime);
+            recipe.CookingTime = TimeSpan.FromMinutes(model.CookingTime);
+            recipe.PortionsCount = model.PortionsCount;
+            recipe.CategoryId = model.CategoryId;
+
+            await this.recipesRepository.SaveChangesAsync();
+
+
+        }
     }
 }

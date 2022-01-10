@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using MyRecipes.Data.Models;
     using MyRecipes.Web.ViewModels.Recipes;
+    using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
     public interface IRecipeService
     {
@@ -16,5 +17,7 @@
         int GetCount();
 
         T GetById<T>(int id);
+
+        Task UpdateAsync (int id, EditRecipeInputModel model);
     }
 }

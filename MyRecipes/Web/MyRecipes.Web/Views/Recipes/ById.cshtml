@@ -1,4 +1,5 @@
-﻿@using MyRecipes.Web.ViewModels.Recipes
+﻿@using MyRecipes.Common
+@using MyRecipes.Web.ViewModels.Recipes
 @model SingleRecipeViewModel
 
 @{ 
@@ -28,6 +29,12 @@
                                         <li><span id="averageVoteValue">@Model.AverageVote.ToString("0.0")</span><span> / 5 </span> </li>
                                     </ul>
                                 </li>
+                        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                         {
+                            <li class="single-meta">
+                                <a asp-contoller="Recipes" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning" >Edit</a> 
+                            </li>
+                         }
                     </ul>
                 </div>
             </div>

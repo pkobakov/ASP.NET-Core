@@ -42,15 +42,15 @@
         } 
 
         [HttpPost]
-        public  async Task<IActionResult> Post (Product product) 
-        { 
+        public async Task<ActionResult> Post(Product product)
+        {
             await db.Products.AddAsync(product);
             await db.SaveChangesAsync();
             return this.CreatedAtAction("Get", new {id = product.Id}, product);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(Product product) 
+        public async Task<ActionResult> Put(Product product) 
         { 
             this.db.Entry(product).State = EntityState.Modified;
             await db.SaveChangesAsync();
