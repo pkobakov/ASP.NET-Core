@@ -7,6 +7,19 @@
 
 <div class="text-center">
     <h1 class="display-4 text-white">Welcome to @GlobalConstants.SystemName!</h1>
+    <div class="col-md-4">
+        @foreach (var recipe in Model.RandomRecipes)
+        {
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@recipe.ImageUrl" alt="@recipe.Name"/>
+                <div class="card-body">
+                    <h5 class="card-title">@recipe.Name</h5>
+                    <p class="card-text">@recipe.Category</p>
+                    <a asp-controller="Recipes" asp-action="ById" asp-route-id="@recipe.Id" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        }
+    </div>
     <div class="col-md-4 offset-md-4">
         <p class="display-6 text-white ">We have:</p>
         <ul>

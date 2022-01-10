@@ -12,10 +12,14 @@
     public class HomeController : BaseController
     {
         private readonly IGetCountsService getCountsService;
+        private readonly IRecipeService recipeService;
 
-        public HomeController(IGetCountsService getCountsService)
+        public HomeController(
+            IGetCountsService getCountsService,
+            IRecipeService recipeService)
         {
             this.getCountsService = getCountsService;
+            this.recipeService = recipeService;
         }
 
         public IActionResult Index()
@@ -28,6 +32,7 @@
                 RecipesCount = counts.RecipesCount,
                 ImagesCount = counts.ImagesCount,
                 IngredientsCount = counts.IngredientsCount,
+                RandomRecipes = this.recipeService.GetRandom<IndexPageRecipeViewModel>(4),
             };
 
             return this.View(viewModel);

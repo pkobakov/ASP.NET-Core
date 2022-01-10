@@ -109,5 +109,14 @@
         {
             return this.recipesRepository.All().Count();
         }
+
+        public IEnumerable<T> GetRandom<T>(int count)
+        {
+            return this.recipesRepository.All()
+                .OrderBy(x => Guid.NewGuid())
+                .To<T>()
+                .Take(count)
+                .ToList();
+        }
     }
 }
