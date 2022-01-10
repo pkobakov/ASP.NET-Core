@@ -40,6 +40,5 @@
         public virtual ICollection<Image> Images { get; set; }
 
         public virtual ICollection<Vote> Votes { get; set; }
-
     }
 }

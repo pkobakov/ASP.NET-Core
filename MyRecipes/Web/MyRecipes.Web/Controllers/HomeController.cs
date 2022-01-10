@@ -32,7 +32,7 @@
                 RecipesCount = counts.RecipesCount,
                 ImagesCount = counts.ImagesCount,
                 IngredientsCount = counts.IngredientsCount,
-                RandomRecipes = this.recipeService.GetRandom<IndexPageRecipeViewModel>(4),
+                RandomRecipes = this.recipeService.GetRandom<IndexPageRecipeViewModel>(8),
             };
 
             return this.View(viewModel);
