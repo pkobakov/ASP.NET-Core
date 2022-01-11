@@ -101,15 +101,16 @@
 
         [HttpPost]
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public async Task<IActionResult> Edit(int id, EditRecipeInputModel input)
+        public async Task<IActionResult> Edit(int id, EditRecipeInputModel model)
         {
             if (!this.ModelState.IsValid)
             {
-                input.CategoriesItems = this.categoriesService.GetAllKeyValuePairs();
-                return this.View(input);
+                model.CategoriesItems = this.categoriesService.GetAllKeyValuePairs();
+                return this.View(model);
             }
 
-            await this.recipeService.UpdateAsync(id, input);
+            model.CategoriesItems = this.categoriesService.GetAllKeyValuePairs();
+            await this.recipeService.UpdateAsync(id, model);
 
             return this.RedirectToAction(nameof(this.ById), new { id });
         }

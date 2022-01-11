@@ -130,8 +130,6 @@
             recipe.CategoryId = model.CategoryId;
 
             await this.recipesRepository.SaveChangesAsync();
-
-
         }
     }
 }
