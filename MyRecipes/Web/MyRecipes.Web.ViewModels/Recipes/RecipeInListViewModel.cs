@@ -23,9 +23,7 @@
             configuration.CreateMap<Recipe, RecipeInListViewModel>()
                 .ForMember(x => x.ImageUrl, opt =>
                     opt.MapFrom(x =>
-                        x.Images.FirstOrDefault().RemoteImageUrl != null
-                        ? x.Images.FirstOrDefault().RemoteImageUrl
-                        : "/images/recipes/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension));
+                        x.Images.FirstOrDefault().RemoteImageUrl ?? "/images/recipes/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension));
         }
     }
 }
