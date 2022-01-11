@@ -1,0 +1,26 @@
+﻿@using MyRecipes.Web.ViewModels.SearchRecipes
+@model SearchIndexViewModel
+
+@{
+    ViewData["Title"] = "Search recipes by ingredients";
+}
+
+<h1 class="display-4 text-center text-white">@ViewData["Title"]</h1>
+<form asp-action="List" method="get">
+    <div class="col">
+        @foreach (var ingredient in Model.Ingredients)
+        {
+           <div class="row-cols-2">
+               <input id="ingredient_@ingredient.Id" type="checkbox" name="Ingredients" value="@ingredient.Id" />
+               <label  for="ingredient_@ingredient.Id">@ingredient.Name</label>
+           </div>
+           
+
+        }
+    </div>
+
+
+    <button class="btn btn btn-success"> Search</button>
+</form>
+
+
