@@ -13,28 +13,33 @@
             <div class="row mb-4">
                 <div class="col-xl-9 col-12">
                     <ul class="entry-meta">
-                           <li class="single-meta">
-                                <i class="far fa-calendar-alt"></i>@Model.CreatedOn.ToShortDateString()
-                           </li>
-                                <li class="single-meta">
-                                        <i class="fas fa-user"></i>by @Model.AddedByUserUserName
-                                </li>
-                                <li class="single-meta">
-                                    <ul class="item-rating">
-                                        <li class="star-fill" data-vote="1"><i class="fas fa-star"></i></li>
-                                        <li class="star-fill" data-vote="2"><i class="fas fa-star"></i></li>
-                                        <li class="star-fill" data-vote="3"><i class="fas fa-star"></i></li>
-                                        <li class="star-fill" data-vote="4"><i class="fas fa-star"></i></li>
-                                        <li class="star-fill" data-vote="5"><i class="fas fa-star"></i></li>
-                                        <li><span id="averageVoteValue">@Model.AverageVote.ToString("0.0")</span><span> / 5 </span> </li>
-                                    </ul>
-                                </li>
+                        <li class="single-meta">
+                            <i class="far fa-calendar-alt"></i>@Model.CreatedOn.ToShortDateString()
+                        </li>
+                        <li class="single-meta">
+                            <i class="fas fa-user"></i>by @Model.AddedByUserUserName
+                        </li>
+                        <li class="single-meta">
+                            <ul class="item-rating">
+                                <li class="star-fill" data-vote="1"><i class="fas fa-star"></i></li>
+                                <li class="star-fill" data-vote="2"><i class="fas fa-star"></i></li>
+                                <li class="star-fill" data-vote="3"><i class="fas fa-star"></i></li>
+                                <li class="star-fill" data-vote="4"><i class="fas fa-star"></i></li>
+                                <li class="star-fill" data-vote="5"><i class="fas fa-star"></i></li>
+                                <li><span id="averageVoteValue">@Model.AverageVote.ToString("0.0")</span><span> / 5 </span> </li>
+                            </ul>
+                        </li>
                         @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
-                         {
+                        {
                             <li class="single-meta">
-                                <a asp-contoller="Recipes" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning" >Edit</a> 
+                                <a asp-contoller="Recipes" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
                             </li>
-                         }
+                            <li class="single-meta">
+                                <form method="post" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id">
+                                </form>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -139,3 +144,23 @@
         });
     </script>
 }
+
+<div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete recipe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete @Model.Name?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="deleteForm.submit()">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
