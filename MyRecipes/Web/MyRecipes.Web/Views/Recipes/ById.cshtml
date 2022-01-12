@@ -35,9 +35,11 @@
                                 <a asp-contoller="Recipes" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
                             </li>
                             <li class="single-meta">
-                                <form method="post" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id">
-                                </form>
+
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                            </li>
+                            <li class="single-meta">
+                                <button class="btn btn-light" onclick="window.print()">Print</button>
                             </li>
                         }
                     </ul>
