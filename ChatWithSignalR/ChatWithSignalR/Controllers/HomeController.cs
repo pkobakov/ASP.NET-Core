@@ -9,5 +9,8 @@ namespace ChatWithSignalR.Controllers
         {
             return View();
         }
+
+      
+
     }
 }
